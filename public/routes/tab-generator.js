@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const youtubeHandler = require('../services/youtube-handler');
-const chordDetector = require('../services/chord-detector');
+const youtubeHandler = require('../../backend/services/youtube-handler');
+const chordDetector = require('../../backend/services/chord-detect');
 
 // Store processed songs in memory (use a database in production)
 const songCache = new Map();
