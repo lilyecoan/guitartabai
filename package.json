@@ -8,7 +8,7 @@
     "dev": "nodemon backend/server.js"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.20.0",
+    "@anthropic-ai/sdk": "^0.20.9",
     "@distube/ytdl-core": "^4.16.12",
     "@tonaljs/chord-detect": "^4.9.1",
     "cors": "^2.8.5",
