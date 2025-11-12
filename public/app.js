@@ -360,7 +360,8 @@ async function generateTabs() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ prompt: youtubeUrl }),
+      body: JSON.stringify({ youtubeUrl }),
+
     });
 
     if (!response.ok) {
