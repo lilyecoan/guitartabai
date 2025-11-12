@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const tabGeneratorRoutes = require('../public/routes/tab-generator');
+const tabGeneratorRoutes = require('./routes/tab-generator');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
