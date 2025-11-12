@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Tab AI - Learn Any Song</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎸 Guitar Tab AI</h1>
+            <p>Learn to play any song with AI-generated guitar tabs</p>
+        </header>
+
+        <main>
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="youtubeUrl" 
+                        placeholder="Paste YouTube URL here..."
+                        aria-label="YouTube URL"
+                    >
+                    <button id="generateBtn" onclick="generateTabs()">
+                        Generate Tabs
+                    </button>
+                </div>
+                <p class="example-text">
+                    Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+                </p>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>Analyzing song and generating tabs...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="error-state hidden">
+                <p id="errorMessage"></p>
+            </div>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden">
+                <!-- Video Info -->
+                <div class="video-info">
+                    <div class="video-details">
+                        <h2 id="songTitle"></h2>
+                        <p id="artistName"></p>
+                    </div>
+                    <img id="thumbnail" src="" alt="Video thumbnail">
+                </div>
+
+                <!-- Song Info Cards -->
+                <div class="info-cards">
+                    <div class="info-card">
+                        <span class="label">Key</span>
+                        <span id="songKey" class="value">-</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">Tuning</span>
+                        <span id="tuning" class="value">-</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">BPM</span>
+                        <span id="bpm" class="value">-</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="label">Difficulty</span>
+                        <span id="difficulty" class="value">-</span>
+                    </div>
+                </div>
+
+                <!-- Strumming Pattern -->
+                <div class="strumming-section">
+                    <h3>Strumming Pattern</h3>
+                    <div id="strummingPattern" class="strumming-pattern"></div>
+                </div>
+
+                <!-- YouTube Player -->
+                <div class="player-section">
+                    <h3>Play Along</h3>
+                    <div id="youtubePlayer"></div>
+                </div>
+
+                <!-- Chord Diagrams -->
+                <div class="chords-section">
+                    <h3>Chord Diagrams</h3>
+                    <div id="chordDiagrams" class="chord-diagrams"></div>
+                </div>
+
+                <!-- Tab Display -->
+                <div class="tabs-section">
+                    <h3>Song Structure</h3>
+                    <div id="tabDisplay" class="tab-display"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="app.js"></script>
+</body>
+</html>
