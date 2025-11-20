@@ -4,12 +4,14 @@ const https = require('https');
 
 class YouTubeHandler {
   constructor() {
-    this.tempDir = path.join(__dirname, '../../temp');
+    // Use /tmp in serverless environments (Vercel), otherwise use local temp
+    this.tempDir = process.env.VERCEL ? '/tmp' : path.join(__dirname, '../../temp');
     this.ensureTempDir();
   }
 
   ensureTempDir() {
-    if (!fs.existsSync(this.tempDir)) {
+    // /tmp already exists in Vercel, only create if using local temp
+    if (!process.env.VERCEL && !fs.existsSync(this.tempDir)) {
       fs.mkdirSync(this.tempDir, { recursive: true });
     }
   }
