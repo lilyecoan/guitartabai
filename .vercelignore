@@ -1,0 +1,12 @@
+node_modules
+temp
+.env
+.git
+*.log
+AI
+guitar-tab-ai
+create-files.js
+setup-project.js
+1762220420712-player-script.js
+1762220420723-player-script.js
+verce
